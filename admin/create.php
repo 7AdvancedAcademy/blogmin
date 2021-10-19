@@ -1,5 +1,5 @@
 
-<?php require_once "../database/schema.php"; ?>
+<?php require_once "../config/database.php"; ?>
 <?php require "components/header.php"; ?>
 
 <?php
