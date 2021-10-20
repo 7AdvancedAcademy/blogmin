@@ -1,3 +1,2 @@
-<?php require "components/header.php" ?>
+<?php header("Location: /admin/posts.php") ?>
 
-<?php require "components/footer.php" ?>
