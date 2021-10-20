@@ -1,25 +1,59 @@
+header{
+position: relative !important;
+}
 .main-menu {
-  padding: 1rem;
+  /* padding: 1rem; */
   margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 9fr;
-  border-bottom: 2px solid #ddd;
-  margin-bottom: 0.5rem;
+  /* display: grid;
+  grid-template-columns: 1fr 9fr; */
+  /* border-bottom: 2px solid #ddd; */
+  /* margin-bottom: 0.5rem; */
 }
 
 .main-menu h1 span {
-  color: white;
-  background-color: black;
+  color: white !important;
+  /* padding: 0 !important; */
+  /* margin: 0 !important; */
+  padding: 10px 0 0 0;
+  background-color: black !important;
 }
 
 .main-menu ul {
   list-style: none;
-  align-self: flex-end;
+  /* align-self: flex-end; */
 }
 
 .main-menu ul li {
-  display: inline-block;
-  margin: 0.2rem 0.1rem;
+  /* display: inline-block;
+  margin: 0.2rem 0.1rem; */
+  transition: all .5s ease-in-out ;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+}
+.main-menu ul li a:after{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: orangered;
+  content: "";
+}
+.main-menu ul li a{
+  margin-right: 1rem;
+  color: black;
+  position: relative;
+  transition: all .5s ease-in-out ;
+}
+.main-menu ul li a:hover{
+  transition: all ease .4s;
+  color: orangered;
+}
+.main-menu ul li a:hover::after{
+  width: 100%;
 }
 
 footer {
@@ -34,4 +68,21 @@ footer {
   font-size: 20px;
   font-weight: bolder;
   margin-bottom: 0.1rem;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+.btn-google {
+  color: white !important;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white !important;
+  background-color: #3b5998;
 }
