@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         $statement = $db->prepare("INSERT INTO posts (title, content) VALUES(:title, :content)");
         $res = $statement->execute([
-           "title" => "TITLE",
-           "content" => "COTENET"
+           "title" => $post_title,
+           "content" => $post_content
         ]);
         echo $res;
         //header("Location: /admin/posts.php");
