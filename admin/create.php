@@ -22,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $cover_image_path = NULL;
         if (is_uploaded_file($_FILES['cover']['tmp_name'])) {
             $name = round(microtime(true) * 1000).strtolower(str_replace(' ', '_', $_FILES['cover']['name']));
-            $cover_image_path = __DIR__ ."/../uploads/$name";
-            $cover_image_path_name = "/uploads/$name";
-            move_uploaded_file($_FILES['cover']['tmp_name'], $cover_image_path);
+            $storage_path = __DIR__ ."/../uploads/$name";
+            $cover_image_path = "/uploads/$name";
+            move_uploaded_file($_FILES['cover']['tmp_name'], $storage_path);
         }
 
         try {
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $res = $statement->execute([
                 "title" => $post_title,
                 "content" => $post_content,
-                "img" => $cover_image_path_name
+                "img" => $cover_image_path
             ]);
             header("Location: /admin/posts.php");
         } catch (\Exception $err) {
