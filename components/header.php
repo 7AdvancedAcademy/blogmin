@@ -57,8 +57,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/pages/contact.php">Contact Us</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/subscribe.php">Subscribe</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+</body>
