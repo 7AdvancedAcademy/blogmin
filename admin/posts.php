@@ -1,3 +1,4 @@
+<?php include __DIR__ . "/RouteGuard.php";  ?>
 <?php require_once __DIR__ . "/../config/database.php"; ?>
 <?php require __DIR__ . "/components/header.php"; ?>
 
