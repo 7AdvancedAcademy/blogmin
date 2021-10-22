@@ -1,4 +1,12 @@
 <?php require_once __DIR__ . "/../config/database.php"; ?>
+
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+session_unset();
+?>
+
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = false;
@@ -24,7 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         print_r($err);
     }
 
-    if(password_verify($password, $user['password'])) {
+    if (password_verify($password, $user['password'])) {
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['password'] = $user['password'];
         header("Location: /admin/posts.php");
     } else {
         echo "<li> Invalid credentials </li>";
