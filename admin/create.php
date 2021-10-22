@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!$errors) {
         $cover_image_path = NULL;
         if (is_uploaded_file($_FILES['cover']['tmp_name'])) {
-            $name = strtolower(str_replace(' ', '_', $_FILES['cover']['name']));
+            $name = round(microtime(true) * 1000).strtolower(str_replace(' ', '_', $_FILES['cover']['name']));
             $cover_image_path = __DIR__ ."/../uploads/$name";
             $cover_image_path_name = "/uploads/$name";
             move_uploaded_file($_FILES['cover']['tmp_name'], $cover_image_path);
