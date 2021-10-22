@@ -21,9 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!$errors) {
         $cover_image_path = NULL;
         if (is_uploaded_file($_FILES['cover']['tmp_name'])) {
-            $name = strtolower(str_replace(' ', '_', $_FILES['cover']['name']));
+            $name = round(microtime(true) * 1000).strtolower(str_replace(' ', '_', $_FILES['cover']['name']));
+            $storage_path = __DIR__ ."/../uploads/$name";
             $cover_image_path = "/uploads/$name";
-            move_uploaded_file($_FILES['cover']['tmp_name'], $cover_image_path);
+            move_uploaded_file($_FILES['cover']['tmp_name'], $storage_path);
         }
 
         try {
@@ -61,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="d-flex">
             <div class="form-group">
                 <label for="coverInput">Cover images</label>
-                <input type="file" name="cover" for="coverInput">
+                <input type="file" accept="image/*" name="cover" for="coverInput">
             </div>
             <div class="form-group">
                 <label for="catInput">Categories</label>

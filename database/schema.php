@@ -5,7 +5,7 @@ $create_post_table_schema = <<<POST_TABLE
 CREATE TABLE IF NOT EXISTS posts (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
     title VARCHAR(40) NOT NULL,
-    img VARCHAR(40) NULL,
+    img VARCHAR(200) NULL,
     categories VARCHAR(40) NULL,
     content LONGTEXT NULL,
     date_time DATETIME
