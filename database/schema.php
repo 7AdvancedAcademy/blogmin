@@ -24,8 +24,8 @@ USER_TABLE;
 
 try {
     $db->query($create_post_table_schema);
-    $db->query($users_table_schema);
     echo "Created posts table\n";
+    $db->query($users_table_schema);
     echo "Created users table\n";
 } catch (\Throwable $th) {
     print_r("Tables not created");
