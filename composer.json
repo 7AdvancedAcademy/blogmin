@@ -1,0 +1,11 @@
+{
+    "name": "blog/blogmin",
+    "autoload": {
+        "psr-4": {
+            "Blog\\Blogmin\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
